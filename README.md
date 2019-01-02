@@ -1,6 +1,6 @@
 # lambda_timeline
 
-A new Flutter project.
+A flutter app that shows Lambda School's curriculum.
 
 ## Getting Started
 
