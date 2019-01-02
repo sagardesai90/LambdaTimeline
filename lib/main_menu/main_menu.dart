@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 
+// import '../dummy_pages/fsw_page.dart';
+
+// _onMenuButtonPress () {
+//   Navigator.push(context, MaterialPageRoute(
+//     builder: (BuildContext context) => FullStackWebPage()
+//   ));
+// }
+
 class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -31,10 +39,14 @@ class MenuContent extends StatelessWidget {
           // see ListTile docs here: https://docs.flutter.io/flutter/material/ListTile-class.html
           dense: true,
           enabled: true,
+          trailing: new IconButton(
+            icon: Icon(Icons.chevron_right),
+            onPressed: () {print('Menu item button tapped');},
+          ),
           isThreeLine:
               false, // If false, the list tile is treated as having one line if the subtitle is null and treated as having two lines if the subtitle is non-null.
           onTap: () => print(
-              "Menu item tapped"), // Instead of onLongPress: () => print("Menu item long pressed"),
+             "Menu item tapped"), // Instead of onLongPress: () => print("Menu item long pressed"),
           // selected: true, // Uncomment if we want selected subitems to turn blue
           title: new Text(t.title));
 
