@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
-// import '../dummy_pages/fsw_page.dart';
+import '../dummy_pages/fsw_page.dart';
 
-// _onMenuButtonPress () {
-//   Navigator.push(context, MaterialPageRoute(
-//     builder: (BuildContext context) => FullStackWebPage()
-//   ));
-// }
+// Navigator.push(context, MaterialPageRoute(
+//   builder: (BuildContext context) => FullStackWebPage()
+// ));
 
 class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Scaffold(
+        appBar: AppBar(
+          title: Text('Lambda timeline'),
+        ),
         body: new ListView.builder(
           itemBuilder: (BuildContext context, int index) {
             return new MenuContent(menuItemsList[index]);
@@ -21,6 +22,20 @@ class MainMenu extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class MenuChevron extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new IconButton(
+        icon: Icon(Icons.chevron_right),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (BuildContext context) => FullStackWebPage()));
+        });
   }
 }
 
@@ -39,14 +54,11 @@ class MenuContent extends StatelessWidget {
           // see ListTile docs here: https://docs.flutter.io/flutter/material/ListTile-class.html
           dense: true,
           enabled: true,
-          trailing: new IconButton(
-            icon: Icon(Icons.chevron_right),
-            onPressed: () {print('Menu item button tapped');},
-          ),
+          trailing: MenuChevron(),
           isThreeLine:
               false, // If false, the list tile is treated as having one line if the subtitle is null and treated as having two lines if the subtitle is non-null.
-          onTap: () => print(
-             "Menu item tapped"), // Instead of onLongPress: () => print("Menu item long pressed"),
+          onTap:
+              () {}, // Instead of onLongPress: () => print("Menu item long pressed"),
           // selected: true, // Uncomment if we want selected subitems to turn blue
           title: new Text(t.title));
 
@@ -96,7 +108,29 @@ List<MenuItem> menuItemsList = <MenuItem>[
       new MenuItem('Kotlin'),
       new MenuItem('Computer Science'),
       new MenuItem('Lambda Labs'),
+      new MenuItem('Computer Science'),
       new MenuItem('Career Development'),
+      new MenuItem('Lambda Next'),
+    ],
+  ),
+  new MenuItem(
+    'Data Science',
+    <MenuItem>[
+      new MenuItem('Predictive statistics'),
+      new MenuItem('Descriptive statistics'),
+      new MenuItem('Data Engineering'),
+      new MenuItem('Machine Learning'),
+      new MenuItem('Lambda Labs'),
+      new MenuItem('Career Development'),
+      new MenuItem('Lambda Next'),
+    ],
+  ),
+  new MenuItem(
+    'UX Design',
+    <MenuItem>[
+      new MenuItem('UX Fundamentals'),
+      new MenuItem('Advanced Design'),
+      new MenuItem('Design in Practice'),
       new MenuItem('Lambda Next'),
     ],
   ),

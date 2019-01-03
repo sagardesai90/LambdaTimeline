@@ -9,10 +9,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        title: Text('Lambda timeline'),
-      ),
-      body: MainMenu(),
-    ));
+            body: MainMenu(),
+            bottomNavigationBar:
+                BottomNavigationBar(items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.school), title: Text('Apply to Lambda')),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.thumb_up), title: Text('Spread the love')),
+            ])));
   }
 }
