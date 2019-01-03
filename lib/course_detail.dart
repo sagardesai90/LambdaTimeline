@@ -14,13 +14,15 @@ class CourseDetail extends StatelessWidget {
     return new Scaffold(
         body: new Container(
       constraints: new BoxConstraints.expand(),
-      color: new Color(0xFFC62828),
       padding: EdgeInsets.only(top: 20.0),
+      color: new Color(0xFFC62828),
       child: new Stack(
         children: <Widget>[
           _getGradient(),
           _getContent(),
-          // _getToolbar(context),
+          new Container(
+            padding: EdgeInsets.only(top: 430.0),
+            child: _getCarousel(context, 0),),
           // ],
           // mainAxisAlignment: MainAxisAlignment.center,
           // children: <Widget>[
@@ -28,6 +30,7 @@ class CourseDetail extends StatelessWidget {
           // new Image.asset(course.image),
           new BackButton(color: Colors.white),
         ],
+        
       ),
     )
 
@@ -60,7 +63,7 @@ class CourseDetail extends StatelessWidget {
 
   Widget _getContent() {
     return new ListView(
-      padding: new EdgeInsets.symmetric(vertical: 40.0),
+      // padding: new EdgeInsets.symmetric(vertical: 40.0),
       children: <Widget>[
         new CourseCard(course),
         new Container(
@@ -74,7 +77,7 @@ class CourseDetail extends StatelessWidget {
                         fontSize: 14.0,
                         fontWeight: FontWeight.w400)),
                 new Container(
-                  margin: EdgeInsets.symmetric(vertical: 10.0),
+                  margin: EdgeInsets.only(top: 10.0),
                   child: new RaisedButton(
                     color: Color(0xff00c6ff),
                     child: Text('APPLY TODAY'),
@@ -88,4 +91,42 @@ class CourseDetail extends StatelessWidget {
       ],
     );
   }
+
+Widget _getCarousel(BuildContext context, int carouselIndex) {
+    return Column(
+      
+      children: <Widget>[
+        SizedBox(
+          // you may want to use an aspect ratio here for tablet support
+          height: 180.0,
+          child: PageView.builder(
+            // store this controller in a State to save the carousel scroll position
+            controller: PageController(viewportFraction: 0.8),
+            itemBuilder: (BuildContext context, int itemIndex) {
+              return _getCarouselItem(context, carouselIndex, itemIndex);
+            },
+          ),
+        )
+      ],
+    );
+  }
+
+  Widget _getCarouselItem(BuildContext context, int carouselIndex, int itemIndex) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 4.0),
+      child: Container(
+        margin: EdgeInsets.only(top: 10.0),
+        decoration: BoxDecoration(
+          color: Color(0xFFECEFF1),
+          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        ),
+        child: Stack(
+          children: <Widget>[
+            
+          ],
+        ),
+      ),
+    );
+  }
+
 }

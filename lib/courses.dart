@@ -27,7 +27,7 @@ List<Course> courses = [
       duration: "30 weeks",
       startdates: "Feb 11, Mar 18, Apr 22",
       image: "assets/images/fullstackweb.png",
-      description: "",
+      description: "The Lambda Full-Stack Web track will help you master everything from the user interface on the front end to the server on the back end. It will set you up to succeed in the software engineering field, and give you an x-factor - a deep understanding of computer science. The curriculum provides in-depth coverage of HTML, CSS, Javascript, Python and C.",
       apply: "https://lambdaschool.com/courses/cs/web/full-time/apply/"
       ),
   const Course(
@@ -37,7 +37,7 @@ List<Course> courses = [
       duration: "30 weeks",
       startdates: "Feb 11, Mar 18, Apr 22",
       image: "assets/images/data.png",
-      description: "",
+      description: "The Lambda Data Science track will give you a thorough understanding of Statistics, Data Engineering, and Machine Learning. It will set you up to succeed in the Data Science field, and give you an x-factor - a deep understanding of computer science. By the end of the curriculum you'll have built a solid foundation and launched advanced statistical models.",
       apply: "https://lambdaschool.com/courses/data-science/full-time/apply/"
       ),
   const Course(

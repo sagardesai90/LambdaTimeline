@@ -79,7 +79,7 @@ class CourseCard extends StatelessWidget {
     final courseCard = new Container(
       child: courseContent,
       height: 120.0,
-      margin: new EdgeInsets.only(left: 70, top: 20),
+      margin: new EdgeInsets.only(left: 70.0, top: 10.0),
       decoration: new BoxDecoration(
           color: new Color(0xFFECEFF1),
           shape: BoxShape.rectangle,
