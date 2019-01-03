@@ -10,8 +10,12 @@ class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      theme: ThemeData(
+          brightness: Brightness.dark,
+        ),
       home: new Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.red[800],
           title: Text('Lambda timeline'),
         ),
         body: new ListView.builder(
@@ -34,7 +38,8 @@ class MenuChevron extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (BuildContext context) => FullStackWebPage()));
+                  builder: (BuildContext context) 
+                    => FullStackWebPage()));
         });
   }
 }

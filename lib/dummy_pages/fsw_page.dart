@@ -5,6 +5,7 @@ class FullStackWebPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.red[800],
           title: Text('Full Stack Web timeline'),
         ),
         body:
