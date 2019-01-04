@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import './courses.dart';
-import './course_card.dart';
+import './ios_courses.dart';
+import './ios_course_card.dart';
 // import './ios/ios_timeline.dart';
 
-class CourseDetail extends StatelessWidget {
-  final Course course;
+class IosCourseDetail extends StatelessWidget {
+  final IosCourse ioscourse;
 
-  CourseDetail(this.course);
+  IosCourseDetail(this.ioscourse);
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +42,8 @@ class CourseDetail extends StatelessWidget {
   }
 
   _launchURL() async {
-    if (await canLaunch(course.apply)) {
-      await launch(course.apply);
+    if (await canLaunch(ioscourse.apply)) {
+      await launch(ioscourse.apply);
     } else {
       throw 'Could not launch page';
     }
@@ -66,12 +66,12 @@ class CourseDetail extends StatelessWidget {
     return new ListView(
       // padding: new EdgeInsets.symmetric(vertical: 40.0),
       children: <Widget>[
-        new CourseCard(course),
+        new IosCourseCard(ioscourse),
         new Container(
             padding: EdgeInsets.symmetric(horizontal: 32.0),
             child: new Column(
               children: <Widget>[
-                new Text(course.description,
+                new Text(ioscourse.description,
                     style: TextStyle(
                         fontFamily: 'Open Sans',
                         color: Colors.black,
@@ -125,33 +125,5 @@ class CourseDetail extends StatelessWidget {
                     )))
       ],
     );
-  }
-
-  Widget _getCarouselItem(
-      BuildContext context, int carouselIndex, int itemIndex) {
-    return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 4.0),
-        child: GestureDetector(
-          onTap: () => Navigator.pushNamed(context, "/iostimeline"),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.grey,
-              borderRadius: BorderRadius.all(Radius.circular(4.0)),
-            ),
-          ),
-        )
-        // child: Container(
-        //   margin: EdgeInsets.only(top: 10.0),
-        //   decoration: BoxDecoration(
-        //     color: Color(0xFFECEFF1),
-        //     borderRadius: BorderRadius.all(Radius.circular(8.0)),
-        //   ),
-        //   child: Stack(
-        //     children: <Widget>[
-
-        //     ],
-        //   ),
-        // ),
-        );
   }
 }
