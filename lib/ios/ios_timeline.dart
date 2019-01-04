@@ -4,20 +4,6 @@ import './ios_course_card.dart';
 import './ios_courses.dart';
 
 class IosTimeline extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         body: new Container(
-//             constraints: new BoxConstraints.expand(),
-//             padding: EdgeInsets.only(top: 20.0),
-//             color: new Color(0xFFECEFF1),
-//             child: new Stack(children: <Widget>[
-//               new BackButton(color: Colors.black),
-//             ])));
-//   }
-// }
-
-// class CourseMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
