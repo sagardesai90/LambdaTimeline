@@ -42,6 +42,7 @@ flutter:
    - assets/images/data.png
    - assets/images/design.png
    - assets/images/learntocode.png
+   - assets/images/lambdalove.png
   #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

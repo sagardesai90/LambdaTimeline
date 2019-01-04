@@ -7,6 +7,7 @@ import './ios/ios_timeline.dart';
 import './data/data_timeline.dart';
 import './android/android_timeline.dart';
 import './design/design_timeline.dart';
+import './lambda_love.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,10 +25,31 @@ class MyApp extends StatelessWidget {
           '/datatimeline': (_) => new DataTimeline(),
           '/androidtimeline': (_) => new AndroidTimeline(),
           '/designtimeline': (_) => new DesignTimeline(),
+          '/lambdalove': (_) => new LambdaLove(),
         },
-        home: Scaffold(
-            body: new Column(
-          children: <Widget>[new ExploreAppBar(), new CourseMain()],
-        )));
+        home: 
+          new FirstScreen()
+        );
   }
+}
+
+class FirstScreen extends StatelessWidget {
+  @override
+    Widget build(BuildContext context) {
+      return new Scaffold(
+          body: new Column(
+            children: <Widget>[
+              new ExploreAppBar(),
+              new CourseMain(),
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            backgroundColor: Color(0xff00c6ff),
+            onPressed: () =>
+                          Navigator.pushNamed(context, "/lambdalove"),
+            child: Text('❤️', style: TextStyle(fontSize: 24.0)),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        );
+    }
 }

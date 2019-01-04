@@ -3,7 +3,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import './courses.dart';
 import './course_card.dart';
-// import './ios/ios_timeline.dart';
 
 class CourseDetail extends StatelessWidget {
   final Course course;
@@ -25,11 +24,6 @@ class CourseDetail extends StatelessWidget {
             padding: EdgeInsets.only(top: 430.0, left: 60.0),
             child: _getCarousel(context, 0),
           ),
-          // ],
-          // mainAxisAlignment: MainAxisAlignment.center,
-          // children: <Widget>[
-          // new Text(course.name),
-          // new Image.asset(course.image),
           new BackButton(color: Colors.white),
         ],
       ),
@@ -86,7 +80,7 @@ class CourseDetail extends StatelessWidget {
                       _launchURL();
                     },
                   ),
-                )
+                ),
               ],
             )),
       ],
@@ -109,7 +103,8 @@ class CourseDetail extends StatelessWidget {
                     margin: EdgeInsets.only(top: 65.0, left: 35.0),
                     child: RaisedButton(
                       color: Color(0xFFE53935),
-                      onPressed: () => Navigator.pushNamed(context, course.timelineurl),
+                      onPressed: () =>
+                          Navigator.pushNamed(context, course.timelineurl),
                       child: Text('View the course timeline'),
                     ),
                   )
