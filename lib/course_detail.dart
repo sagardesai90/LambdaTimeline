@@ -109,7 +109,7 @@ class CourseDetail extends StatelessWidget {
                     margin: EdgeInsets.only(top: 65.0, left: 35.0),
                     child: RaisedButton(
                       color: Color(0xFFE53935),
-                      onPressed: () => Navigator.pushNamed(context, "/iostimeline"),
+                      onPressed: () => Navigator.pushNamed(context, course.timelineurl),
                       child: Text('View the course timeline'),
                     ),
                   )
