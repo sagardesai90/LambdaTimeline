@@ -76,9 +76,6 @@ class IosCourseCard extends StatelessWidget {
 
     return new GestureDetector(
         onTap: () => {},
-        // Navigator.of(context).push(new PageRouteBuilder(
-        //       pageBuilder: (_, __, ___) => new IosCourseDetail(ioscourse),
-        //     )),
         child: new Container(
           height: 140.0,
           margin: const EdgeInsets.only(right: 20.0, left: 20.0),

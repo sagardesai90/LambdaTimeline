@@ -19,14 +19,13 @@ class ExploreAppBar extends StatelessWidget {
       ),
       decoration: new BoxDecoration(
         gradient: new LinearGradient(
-          colors: [
-            const Color(0xFFF44336),
-            const Color(0xFFB71C1C),
-          ],
-          begin: const FractionalOffset(0.0, 0.0),
-          end: const FractionalOffset(1.0, 1.0),
-          tileMode: TileMode.clamp
-        ),
+            colors: [
+              const Color(0xFFF44336),
+              const Color(0xFFB71C1C),
+            ],
+            begin: const FractionalOffset(0.0, 0.0),
+            end: const FractionalOffset(1.0, 1.0),
+            tileMode: TileMode.clamp),
       ),
     );
   }

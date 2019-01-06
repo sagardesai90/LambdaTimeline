@@ -108,16 +108,7 @@ class CourseDetail extends StatelessWidget {
                       child: Text('View the course timeline'),
                     ),
                   )
-                ]
-
-                    // PageView.builder(
-                    //   // store this controller in a State to save the carousel scroll position
-                    //   controller: PageController(viewportFraction: 0.8),
-                    //   itemBuilder: (BuildContext context, int itemIndex) {
-                    //     return _getCarouselItem(context, carouselIndex, itemIndex);
-                    //   },
-                    // ),
-                    )))
+                ])))
       ],
     );
   }
@@ -134,19 +125,6 @@ class CourseDetail extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(4.0)),
             ),
           ),
-        )
-        // child: Container(
-        //   margin: EdgeInsets.only(top: 10.0),
-        //   decoration: BoxDecoration(
-        //     color: Color(0xFFECEFF1),
-        //     borderRadius: BorderRadius.all(Radius.circular(8.0)),
-        //   ),
-        //   child: Stack(
-        //     children: <Widget>[
-
-        //     ],
-        //   ),
-        // ),
-        );
+        ));
   }
 }
