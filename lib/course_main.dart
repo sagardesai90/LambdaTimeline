@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import './course_card.dart';
 import './courses.dart';
+import './timeline.dart';
+import './subtopics.dart';
 
 class CourseMain extends StatelessWidget {
   @override
