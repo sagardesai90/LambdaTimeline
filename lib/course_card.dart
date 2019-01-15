@@ -99,3 +99,4 @@ class CourseCard extends StatelessWidget {
         ));
   }
 }
+ 

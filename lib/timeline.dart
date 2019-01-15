@@ -1,29 +1,20 @@
 import 'package:flutter/material.dart';
-
+import './subtopics.dart';
 
 class Timeline extends StatelessWidget {
   //sample
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Lambda School',
-      theme: new ThemeData(
-        primaryColor: Colors.grey.shade900
-      ),
+    return new Expanded(
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text('hello')
+          );
+        }
+      )
       
     );
   }
-
-  Widget getListView() {
-    var listItems = getListElements();
-    var listView = ListView.builder(
-      itemBuilder: (context, index){
-        return ListTile(
-          title: Text(listItems[index]),
-        );
-      }
-    );
-  }
-
 
 }
