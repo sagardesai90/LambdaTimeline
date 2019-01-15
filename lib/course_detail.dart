@@ -14,18 +14,16 @@ class CourseDetail extends StatelessWidget {
     return new Scaffold(
         body: new Container(
       constraints: new BoxConstraints.expand(),
-      color: new Color(0xFFC62828),
       padding: EdgeInsets.only(top: 20.0),
+      color: new Color(0xFFC62828),
       child: new Stack(
         children: <Widget>[
           _getGradient(),
           _getContent(),
-          // _getToolbar(context),
-          // ],
-          // mainAxisAlignment: MainAxisAlignment.center,
-          // children: <Widget>[
-          // new Text(course.name),
-          // new Image.asset(course.image),
+          new Container(
+            padding: EdgeInsets.only(top: 430.0, left: 60.0),
+            child: _getCarousel(context, 0),
+          ),
           new BackButton(color: Colors.white),
         ],
       ),
@@ -60,7 +58,7 @@ class CourseDetail extends StatelessWidget {
 
   Widget _getContent() {
     return new ListView(
-      padding: new EdgeInsets.symmetric(vertical: 40.0),
+      // padding: new EdgeInsets.symmetric(vertical: 40.0),
       children: <Widget>[
         new CourseCard(course),
         new Container(
@@ -74,7 +72,7 @@ class CourseDetail extends StatelessWidget {
                         fontSize: 14.0,
                         fontWeight: FontWeight.w400)),
                 new Container(
-                  margin: EdgeInsets.symmetric(vertical: 10.0),
+                  margin: EdgeInsets.only(top: 10.0),
                   child: new RaisedButton(
                     color: Color(0xff00c6ff),
                     child: Text('APPLY TODAY'),
@@ -82,10 +80,51 @@ class CourseDetail extends StatelessWidget {
                       _launchURL();
                     },
                   ),
-                )
+                ),
               ],
             )),
       ],
     );
+  }
+
+  Widget _getCarousel(BuildContext context, int carouselIndex) {
+    return Column(
+      children: <Widget>[
+        SizedBox(
+            // you may want to use an aspect ratio here for tablet support
+            height: 180.0,
+            child: GestureDetector(
+                onTap: () => Navigator.pushNamed(context, "/iostimeline"),
+                child: new Stack(children: <Widget>[
+                  Image(
+                    image: new AssetImage('assets/images/learntocode.png'),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 65.0, left: 35.0),
+                    child: RaisedButton(
+                      color: Color(0xFFE53935),
+                      onPressed: () =>
+                          Navigator.pushNamed(context, course.timelineurl),
+                      child: Text('View the course timeline'),
+                    ),
+                  )
+                ])))
+      ],
+    );
+  }
+
+  Widget _getCarouselItem(
+      BuildContext context, int carouselIndex, int itemIndex) {
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 4.0),
+        child: GestureDetector(
+          onTap: () => Navigator.pushNamed(context, "/iostimeline"),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.all(Radius.circular(4.0)),
+            ),
+          ),
+        ));
   }
 }
