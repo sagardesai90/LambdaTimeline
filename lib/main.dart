@@ -24,13 +24,13 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
 
           '/timeline': (_) => new Timeline(),
-        },
-        home: Scaffold(
-            body: new Column(
-          children: <Widget>[new ExploreAppBar(), new CourseMain()],
-        )));
-  }
-}
+//         },
+//         home: Scaffold(
+//             body: new Column(
+//           children: <Widget>[new ExploreAppBar(), new CourseMain()],
+//         )));
+//   }
+// }
 
           '/fullstackwebtimeline': (_) => new FullstackwebTimeline(),
           '/iostimeline': (_) => new IosTimeline(),
@@ -64,4 +64,4 @@ class FirstScreen extends StatelessWidget {
           floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         );
     }
-
+}

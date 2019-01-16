@@ -35,7 +35,7 @@ class ExploreAppBar extends StatelessWidget {
               color: Color(0xff00c6ff),
               child: Text('Timeline'),
               onPressed: () {
-                Navigator.pushNamed(context, '/timeline');
+                Navigator.pushNamed(context, '/timeline'); //need to route to the page with a timeline, 
               },
             )
           )
