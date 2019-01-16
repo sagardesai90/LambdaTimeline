@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         ),
         routes: <String, WidgetBuilder>{
 
-          '/timeline': (_) => new Timeline(),
+          // '/timeline': (_) => new Timeline(),
 //         },
 //         home: Scaffold(
 //             body: new Column(
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           '/datatimeline': (_) => new DataTimeline(),
           '/androidtimeline': (_) => new AndroidTimeline(),
           '/designtimeline': (_) => new DesignTimeline(),
-          '/lambdalove': (_) => new LambdaLove(),
+          // '/lambdalove': (_) => new LambdaLove(),
         },
         home: 
           new FirstScreen()
